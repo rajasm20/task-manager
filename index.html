@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Task Planner</title>
+</head>
+<body>    
+    <div class="container">
+        <h1>Task Planner</h1>
+        <div class="add-task">
+            <input type="number" id="taskId" placeholder="Task ID" required>
+            <input type="text" id="taskName" placeholder="Task Name" required>
+            <input type="date" id="taskStartDate" required>
+            <input type="date" id="taskEndDate" required onchange="updateTaskStatusDropdown()">
+            <select id="taskStatus">                
+            </select>
+            <button id="addTask">Add Task</button>
+        </div>
+        <div class="search">
+            <select id="searchParam">
+                <option value="id">ID</option>
+                <option value="name">Name</option>
+                <option value="status">Status</option>
+                <option value="startDate">Start Date</option>
+                <option value="endDate">End Date</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search">
+            <input type="date" id="searchDateInput">
+        </div>
+        <div>
+            <form id="editForm">
+                
+            </form>
+        </div>
+        <div>
+            <form id="editSubtaskForm">
+                
+            </form>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
