@@ -1,14 +1,20 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-   
+    padding: 0; 
+
     
 }
 
 
 #searchDateInput{
     display: none;
+}
+
+#statusSearch{
+    background-color: white;
+    color: #040607;
+    border: gray 1px solid;
 }
 
 .container {
@@ -29,7 +35,8 @@ h1 {
 
 .add-task, .search {
     display: flex;
-    align-items: center;   
+    align-items: center;  
+     
     gap: 10px;
     margin-bottom: 10px;
 }
@@ -128,7 +135,25 @@ ul {
    
 }
 
+#clearButton{
+    background-color: #040607;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+}
 
+#clearButton:hover{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+}
 
 
 .edit-button {
@@ -227,4 +252,69 @@ ul {
 
 .task-list {
     list-style: none;
+}
+
+#norecord{
+    color: red;
+}
+@media screen and (max-width: 768px) {
+    
+    .task-item{
+         font-size: 1vw;
+    }
+
+    .add-task, .search {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-task input[type="number"],
+    .add-task input[type="text"],
+    .add-task input[type="date"],
+    .add-task select,
+    .search input[type="text"],
+    .search input[type="date"]
+    
+    {
+        width: 60%; 
+        margin-bottom: 10px;
+    }
+
+    .add-task button,
+    .search button {
+        width: 20%; 
+    }
+    
+    .task-item,
+    .subtask-item {
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    
+    #editForm input[type="text"],
+    #editForm input[type="date"] {
+        width: 100%;
+    }
+
+    
+    .subtask-form input[type="text"],
+    .subtask-form input[type="date"],
+    .subtask-form select {
+        width: 100%;
+    }
+
+    #searchParam{
+        width: 40%;
+    }
+
+    #taskStatus{
+        width: 40%;
+    }
+
+    #statusSearch{
+        width: 60%;
+    }
+
 }

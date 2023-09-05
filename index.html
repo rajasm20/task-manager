@@ -11,10 +11,11 @@
         <h1>Task Planner</h1>
         <div class="add-task">
             <input type="number" id="taskId" placeholder="Task ID" required>
-            <input type="text" id="taskName" placeholder="Task Name" required>
+            <input type="text" id="taskName" placeholder="Task Name" oninput="validateTaskName(this)" required>
             <input type="date" id="taskStartDate" required>
             <input type="date" id="taskEndDate" required onchange="updateTaskStatusDropdown()">
-            <select id="taskStatus">                
+            <select id="taskStatus"> 
+                <option value="" disabled selected>Select Status</option>               
             </select>
             <button id="addTask">Add Task</button>
         </div>
@@ -27,8 +28,18 @@
                 <option value="endDate">End Date</option>
             </select>
             <input type="text" id="searchInput" placeholder="Search">
-            <input type="date" id="searchDateInput">
+            <input type="date" id="startDateSearch" placeholder="Start Date" style="display: none;">
+            <input type="date" id="endDateSearch" placeholder="End Date" style="display: none;">
+            <select id="statusSearch" style="display: none;">
+                <option value="" disabled selected>Select Status</option>                
+                <option value="in_progress">In Progress</option>
+                <option value="completed">Completed</option>
+                <option value="due_passed">Due Passed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>  
+            <button id="clearButton">Clear</button>  
         </div>
+              
         <div>
             <form id="editForm">
                 
